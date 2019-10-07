@@ -472,10 +472,15 @@
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
-  // E3D v6
-  #define DEFAULT_Kp 16.91
-  #define DEFAULT_Ki 1.24
-  #define DEFAULT_Kd 57.49
+  // E3D v6 @ 205C 
+  //#define DEFAULT_Kp 16.91
+  //#define DEFAULT_Ki 1.24
+  //#define DEFAULT_Kd 57.49
+
+  // E3D v6 @ 215C
+  #define DEFAULT_Kp 26.61
+  #define DEFAULT_Ki 2.29
+  #define DEFAULT_Kd 77.40
 
   // Ultimaker
   //#define DEFAULT_Kp 22.2
@@ -934,7 +939,7 @@
 #define NOZZLE_TO_PROBE_OFFSET { -36.4, 0, -0.31 }
 
 // Certain types of probes need to stay away from edges
-#define MIN_PROBE_EDGE 20
+#define MIN_PROBE_EDGE 33
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 10000
