@@ -50,19 +50,13 @@
 #include "extensible_ui/ui_api.h"
 
 #include "ultralcd.h"
+#include "../sd/cardreader.h"
 #include "../module/temperature.h"
 #include "../module/stepper.h"
 #include "../module/motion.h"
 #include "../libs/duration_t.h"
 #include "../module/printcounter.h"
 #include "../gcode/queue.h"
-
-#if ENABLED(SDSUPPORT)
-  #include "../sd/cardreader.h"
-  #include "../sd/SdFatConfig.h"
-#else
-  #define LONG_FILENAME_LENGTH 0
-#endif
 
 #define DEBUG_OUT ENABLED(DEBUG_MALYAN_LCD)
 #include "../core/debug_out.h"
@@ -464,9 +458,11 @@ namespace ExtUI {
   }
 
   // {E:<msg>} is for error states.
-  void onPrinterKilled(PGM_P msg) {
+  void onPrinterKilled(PGM_P error, PGM_P component) {
     write_to_lcd_P(PSTR("{E:"));
-    write_to_lcd_P(msg);
+    write_to_lcd_P(error);
+    write_to_lcd_P(PSTR(" "));
+    write_to_lcd_P(component);
     write_to_lcd_P("}");
   }
 
