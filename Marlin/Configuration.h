@@ -540,9 +540,9 @@
   //#define DEFAULT_bedKd 190.77
   
   //Creality Ender-3 + spring steel sheet
-  #define DEFAULT_bedKp 56.32
-  #define DEFAULT_bedKi 11.09
-  #define DEFAULT_bedKd 190.77
+  #define DEFAULT_bedKp 38.72
+  #define DEFAULT_bedKi 7.62
+  #define DEFAULT_bedKd 131.12
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
@@ -941,10 +941,10 @@
  * Specify a Probe position as { X, Y, Z }
  */
 //new definition
-#define NOZZLE_TO_PROBE_OFFSET { -36.4, 0, -2.225 }
+#define NOZZLE_TO_PROBE_OFFSET { -36.4, 0, -2.1 }
 
 // Certain types of probes need to stay away from edges
-#define MIN_PROBE_EDGE 43
+#define MIN_PROBE_EDGE 20
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 10000
@@ -1192,7 +1192,7 @@
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-//#define RESTORE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1220,9 +1220,9 @@
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for the G26 Mesh Validation Tool.
-    #define MESH_TEST_HOTEND_TEMP  200    // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
-    #define MESH_TEST_BED_TEMP      60    // (°C) Default bed temperature for the G26 Mesh Validation Tool.
-    #define G26_XY_FEEDRATE         20    // (mm/s) Feedrate for XY Moves for the G26 Mesh Validation Tool.
+    #define MESH_TEST_HOTEND_TEMP  205    // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
+    #define MESH_TEST_BED_TEMP      65    // (°C) Default bed temperature for the G26 Mesh Validation Tool.
+    #define G26_XY_FEEDRATE         60    // (mm/s) Feedrate for XY Moves for the G26 Mesh Validation Tool.
   #endif
 
 #endif
@@ -1268,7 +1268,7 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 17              // Set Mesh bounds as an inset region of the bed
+  #define MESH_INSET 20              // Set Mesh bounds as an inset region of the bed
   #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
@@ -1277,20 +1277,14 @@
 
   //#define UBL_Z_RAISE_WHEN_OFF_MESH 2.5 // When the nozzle is off the mesh, this value is used
                                           // as the Z-Height correction value.
-  #define UBL_PROBE_PT_1_X 30       // Probing points for 3-Point leveling of the mesh
-  #define UBL_PROBE_PT_1_Y 30
-  #define UBL_PROBE_PT_2_X 205
-  #define UBL_PROBE_PT_2_Y 30
-  #define UBL_PROBE_PT_3_X 117.5
-  #define UBL_PROBE_PT_3_Y 205
-
+  
 #elif ENABLED(MESH_BED_LEVELING)
 
   //===========================================================================
   //=================================== Mesh ==================================
   //===========================================================================
 
-  #define MESH_INSET 17          // Set Mesh bounds as an inset region of the bed
+  #define MESH_INSET 20          // Set Mesh bounds as an inset region of the bed
   #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
