@@ -140,16 +140,16 @@
   #define Z_CS_PIN         40
 #endif
 
-#define E0_STEP_PIN        36 // originally 26
-#define E0_DIR_PIN         34 // originally 28
-#define E0_ENABLE_PIN      30 // originally 24
+#define E0_STEP_PIN        26
+#define E0_DIR_PIN         28
+#define E0_ENABLE_PIN      24
 #ifndef E0_CS_PIN
   #define E0_CS_PIN        42
 #endif
 
-#define E1_STEP_PIN        26 // originally 36
-#define E1_DIR_PIN         28 // originally 34 
-#define E1_ENABLE_PIN      24 // oroginally 30
+#define E1_STEP_PIN        36
+#define E1_DIR_PIN         34
+#define E1_ENABLE_PIN      30
 #ifndef E1_CS_PIN
   #define E1_CS_PIN        44
 #endif
