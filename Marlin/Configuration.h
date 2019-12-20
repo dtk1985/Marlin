@@ -728,7 +728,7 @@
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 } //original e3 mini / ender3
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 436.5 } //e3d titan e-steps updated
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 403.9 } //e3d titan e-steps for e3 mini v1.2
 
 /**
  * Default Max Feed Rate (mm/s)
